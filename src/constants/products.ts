@@ -1,0 +1,127 @@
+import type { Product, ProductCategory } from "@/types";
+
+export const productCategories: ProductCategory[] = [
+  { name: "Tenda", slug: "tenda" },
+  { name: "Carrier", slug: "carrier" },
+  { name: "Sleeping Bag", slug: "sleeping-bag" },
+  { name: "Matras", slug: "matras" },
+  { name: "Lighting", slug: "lighting" },
+  { name: "Cooking Set", slug: "cooking-set" },
+  { name: "Hiking Gear", slug: "hiking-gear" },
+  { name: "Hammock", slug: "hammock" }
+];
+
+export const products: Product[] = [
+  {
+    id: "prod-001",
+    name: "Tenda Eiger 4P",
+    slug: "tenda-eiger-4p",
+    category: "Tenda",
+    pricePerDay: 75000,
+    deposit: 250000,
+    stock: 10,
+    status: "available",
+    highlights: ["4 orang", "Double layer", "Anti hujan"],
+    specs: ["Berat 4.2 kg", "Ukuran 210 x 240 cm", "Aluminium pole"],
+    includedItems: ["Footprint", "Flysheet", "Stakes"],
+    tone: "from-moss-green/60 to-forest-green/40"
+  },
+  {
+    id: "prod-002",
+    name: "Carrier Consina 60L",
+    slug: "carrier-consina-60l",
+    category: "Carrier",
+    pricePerDay: 50000,
+    deposit: 150000,
+    stock: 8,
+    status: "available",
+    highlights: ["Back system", "Rain cover", "Kompartemen lega"],
+    specs: ["Volume 60L", "Material nylon", "Support aluminium"],
+    includedItems: ["Rain cover", "Hip belt"],
+    tone: "from-earth-brown/60 to-forest-green/30"
+  },
+  {
+    id: "prod-003",
+    name: "Sleeping Bag Rei",
+    slug: "sleeping-bag-rei",
+    category: "Sleeping Bag",
+    pricePerDay: 35000,
+    deposit: 120000,
+    stock: 15,
+    status: "limited",
+    highlights: ["Comfort 5C", "Ringan", "Quick dry"],
+    specs: ["Berat 1.1 kg", "Material hollow fiber", "Hood adjustable"],
+    includedItems: ["Compression bag"],
+    tone: "from-stone-gray/60 to-forest-green/30"
+  },
+  {
+    id: "prod-004",
+    name: "Headlamp Naturehike",
+    slug: "headlamp-naturehike",
+    category: "Lighting",
+    pricePerDay: 20000,
+    deposit: 80000,
+    stock: 20,
+    status: "available",
+    highlights: ["450 lumen", "USB-C", "Water resistant"],
+    specs: ["IPX4", "Mode 5", "Battery 1200 mAh"],
+    includedItems: ["Cable USB", "Head strap"],
+    tone: "from-moss-green/50 to-charcoal/40"
+  },
+  {
+    id: "prod-005",
+    name: "Matras Alumunium Pro",
+    slug: "matras-alumunium-pro",
+    category: "Matras",
+    pricePerDay: 15000,
+    deposit: 50000,
+    stock: 18,
+    status: "available",
+    highlights: ["Insulasi", "Ringan", "Easy fold"],
+    specs: ["Ketebalan 1 cm", "Ukuran 180 x 60 cm", "Foam EVA"],
+    includedItems: ["Strap"],
+    tone: "from-stone-gray/60 to-earth-brown/30"
+  },
+  {
+    id: "prod-006",
+    name: "Cooking Set Summit",
+    slug: "cooking-set-summit",
+    category: "Cooking Set",
+    pricePerDay: 30000,
+    deposit: 120000,
+    stock: 12,
+    status: "available",
+    highlights: ["Compact", "Non-stick", "3-4 orang"],
+    specs: ["1.3 L", "Stainless + aluminium", "Stackable"],
+    includedItems: ["Panci", "Wajan", "Spatula"],
+    tone: "from-earth-brown/60 to-moss-green/30"
+  },
+  {
+    id: "prod-007",
+    name: "Trekking Pole Carbon",
+    slug: "trekking-pole-carbon",
+    category: "Hiking Gear",
+    pricePerDay: 25000,
+    deposit: 90000,
+    stock: 9,
+    status: "limited",
+    highlights: ["Shock absorb", "Adjustable", "Ultra light"],
+    specs: ["Material carbon", "Panjang 65-135 cm", "Tip tungsten"],
+    includedItems: ["Basket"],
+    tone: "from-forest-green/50 to-charcoal/40"
+  },
+  {
+    id: "prod-008",
+    name: "Hammock Adventure",
+    slug: "hammock-adventure",
+    category: "Hammock",
+    pricePerDay: 22000,
+    deposit: 70000,
+    stock: 7,
+    status: "available",
+    highlights: ["Quick setup", "Breathable", "Mosquito net"],
+    specs: ["Kapasitas 150 kg", "Material ripstop", "Strap 2 m"],
+    includedItems: ["Carabiner", "Strap"],
+    tone: "from-moss-green/50 to-earth-brown/40"
+  }
+];
