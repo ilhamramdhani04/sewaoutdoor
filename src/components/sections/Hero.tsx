@@ -52,11 +52,12 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-none border border-hairline bg-soft-cloud">
-              <div className="absolute left-8 top-6 text-xs uppercase tracking-[0.4em] text-mute">
-                Campaign Story
-              </div>
-              <div className="aspect-[4/5]" />
+            <div className="relative overflow-hidden rounded-none border border-hairline bg-soft-cloud max-w-sm mx-auto">
+              <img
+                src="/images/catalog/poster.png"
+                alt="Poster campaign story"
+                className="w-full h-auto"
+              />
               <div className="border-t border-hairline px-6 py-5">
                 <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-mute">
                   <span>Gear curated</span>

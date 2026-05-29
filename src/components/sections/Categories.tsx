@@ -1,11 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
 import { categories } from "@/constants/home";
+import { productCategories } from "@/constants/products";
 
 export default function Categories() {
+  const getCategorySlug = (name: string) => {
+    const categoryData = productCategories.find((cat) => cat.name === name);
+    return categoryData?.slug || name.toLowerCase();
+  };
+
   return (
     <section id="kategori" className="py-20">
       <Container className="space-y-10">
@@ -22,15 +29,24 @@ export default function Categories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="min-w-[280px] max-w-[320px] flex-1 border border-hairline bg-canvas"
             >
-              <div className="h-64 bg-soft-cloud" />
-              <div className="space-y-2 px-5 py-4">
-                <p className="font-heading text-lg text-ink uppercase tracking-[0.12em]">
-                  {category.name}
-                </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-mute">{category.items}</p>
-              </div>
+              <Link href={`/catalog?cat=${getCategorySlug(category.name)}`}>
+                <div className="min-w-[280px] max-w-[320px] flex-1 border border-hairline bg-canvas cursor-pointer transition hover:-translate-y-1 hover:border-ink">
+                  <div className="h-64 overflow-hidden bg-soft-cloud">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="px-5 py-4">
+                    <p className="font-heading text-lg text-ink uppercase tracking-[0.12em]">
+                      {category.name}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -22,7 +22,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group flex h-full flex-col border border-hairline bg-canvas p-4 transition hover:-translate-y-1 hover:border-ink"
     >
       <div className="relative overflow-hidden bg-soft-cloud">
-        <div className="h-44 transition duration-300 group-hover:scale-105" />
+        <img
+          src={product.image}
+          alt={product.name}
+          loading="lazy"
+          className="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+        />
         <div className="absolute left-4 top-4 flex gap-2">
           <Badge>{product.category}</Badge>
           <Badge className={`border ${status.className}`}>{status.label}</Badge>

@@ -10,6 +10,7 @@ export type Product = {
   name: string;
   slug: string;
   category: string;
+  image: string;
   pricePerDay: number;
   deposit: number;
   stock: number;

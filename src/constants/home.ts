@@ -12,14 +12,14 @@ export const quickStats = [
 ];
 
 export const categories = [
-  { name: "Tenda", items: "42 item", tone: "bg-soft-cloud" },
-  { name: "Carrier", items: "18 item", tone: "bg-canvas" },
-  { name: "Sleeping Bag", items: "32 item", tone: "bg-soft-cloud" },
-  { name: "Matras", items: "21 item", tone: "bg-canvas" },
-  { name: "Lighting", items: "14 item", tone: "bg-soft-cloud" },
-  { name: "Cooking Set", items: "20 item", tone: "bg-canvas" },
-  { name: "Hiking Gear", items: "36 item", tone: "bg-soft-cloud" },
-  { name: "Hammock", items: "10 item", tone: "bg-canvas" }
+  { name: "Tenda", image: "/images/catalog/tendaeiger4p.jpg", tone: "bg-soft-cloud" },
+  { name: "Carrier", image: "/images/catalog/carrierconsina60l.jpg", tone: "bg-canvas" },
+  { name: "Sleeping Bag", image: "/images/catalog/sleepingbagrei.jpg", tone: "bg-soft-cloud" },
+  { name: "Matras", image: "/images/catalog/matrasaluminium.jpg", tone: "bg-canvas" },
+  { name: "Lighting", image: "/images/catalog/headlampnaturehika.jpg", tone: "bg-soft-cloud" },
+  { name: "Cooking Set", image: "/images/catalog/cookingset.jpg", tone: "bg-canvas" },
+  { name: "Hiking Gear", image: "/images/catalog/trekkingpolecarbon.jpg", tone: "bg-soft-cloud" },
+  { name: "Hammock", image: "/images/catalog/hammock.jpg", tone: "bg-canvas" }
 ];
 
 

@@ -53,6 +53,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   }
 
   const related = products.filter((item) => item.category === product.category && item.id !== product.id);
+  const gallery = [product.image, product.image, product.image];
 
   return (
     <div className="min-h-screen bg-canvas">
@@ -73,14 +74,25 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
             <div className="border border-hairline bg-soft-cloud p-6">
-              <div className="aspect-[16/10] bg-canvas" />
+              <img
+                src={product.image}
+                alt={product.name}
+                className="aspect-[16/10] w-full object-cover"
+              />
             </div>
             <div className="grid grid-cols-3 gap-4">
-              {Array.from({ length: 3 }).map((_, index) => (
+              {gallery.map((image, index) => (
                 <div
                   key={`thumb-${index}`}
-                  className="aspect-[4/3] border border-hairline bg-soft-cloud"
-                />
+                  className="aspect-[4/3] overflow-hidden border border-hairline bg-soft-cloud"
+                >
+                  <img
+                    src={image}
+                    alt={`${product.name} thumbnail ${index + 1}`}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               ))}
             </div>
             <div className="space-y-4 border border-hairline bg-canvas p-6">

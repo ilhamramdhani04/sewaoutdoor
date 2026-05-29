@@ -43,8 +43,12 @@ export default function FeaturedPackage() {
               <span className="text-sm text-stone">Mulai Rp 380.000</span>
             </div>
           </div>
-          <div className="border border-hairline bg-soft-cloud">
-            <div className="h-full min-h-[320px] bg-canvas" />
+          <div className="border border-hairline bg-soft-cloud overflow-hidden">
+            <img
+              src="/images/catalog/paketcamping.png"
+              alt="Paket camping 2D1N"
+              className="h-full w-full object-cover"
+            />
           </div>
         </motion.div>
       </Container>
