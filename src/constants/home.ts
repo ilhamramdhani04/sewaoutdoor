@@ -1,4 +1,6 @@
-export const navLinks = [
+import type { Route } from "next";
+
+export const navLinks: ReadonlyArray<{ label: string; href: Route }> = [
   { label: "Beranda", href: "/" },
   { label: "Katalog", href: "/catalog" },
   { label: "Kategori", href: "/#kategori" },
