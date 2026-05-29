@@ -36,20 +36,16 @@ export default function RootLayout({
       <body className="min-h-screen bg-canvas text-ink antialiased">
         {children}
       </body>
-      {process.env.NEXT_PUBLIC_GA_ID ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-EVTCLY5HCB"
+        strategy="afterInteractive"
+      />
+      <Script id="ga-init" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
-          </Script>
-        </>
-      ) : null}
+gtag('config', 'G-EVTCLY5HCB');`}
+      </Script>
     </html>
   );
 }
