@@ -1,14 +1,22 @@
 "use client";
 
+import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CalendarCheck } from "lucide-react";
+import type { UrlObject } from "url";
 
-const navItems = [
-  { label: "Beranda", href: "/" },
-  { label: "Katalog", href: "/catalog" },
-  { label: "Kategori", href: "/#kategori" },
-  { label: "Paket", href: "/#paket" }
+type NavItem = {
+  label: string;
+  href: Route | UrlObject;
+  matchPath: string;
+};
+
+const navItems: NavItem[] = [
+  { label: "Beranda", href: "/", matchPath: "/" },
+  { label: "Katalog", href: "/catalog", matchPath: "/catalog" },
+  { label: "Kategori", href: { pathname: "/", hash: "kategori" }, matchPath: "/" },
+  { label: "Paket", href: { pathname: "/", hash: "paket" }, matchPath: "/" }
 ];
 
 const hiddenPrefixes = ["/admin", "/dashboard"];
@@ -28,9 +36,9 @@ export default function MobileBottomNav() {
         <div className="mx-auto grid max-w-7xl grid-cols-[1fr_1fr_1fr_1fr_auto] items-center gap-2 px-4 py-3">
           {navItems.map((item) => {
             const isActive =
-              item.href === "/"
+              item.matchPath === "/"
                 ? pathname === "/"
-                : pathname.startsWith(item.href.replace(/#.*$/, ""));
+                : pathname.startsWith(item.matchPath);
             return (
               <Link
                 key={item.label}
