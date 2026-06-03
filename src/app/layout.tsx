@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import Script from "next/script";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sewaoutdoor.vercel.app";
+const siteName = "SewaOutdoor";
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 const headingFont = Inter({
   subsets: ["latin"],
   variable: "--font-heading",
@@ -22,8 +27,41 @@ const accentFont = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "SewaOutdoor - Premium Outdoor Rental",
-  description: "Booking alat outdoor semudah booking hotel."
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "SewaOutdoor - Premium Outdoor Rental",
+    template: "%s | SewaOutdoor"
+  },
+  description: "Booking alat outdoor semudah booking hotel.",
+  applicationName: siteName,
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "SewaOutdoor - Premium Outdoor Rental",
+    description: "Booking alat outdoor semudah booking hotel.",
+    url: "/",
+    siteName,
+    locale: "id_ID",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SewaOutdoor - Premium Outdoor Rental",
+    description: "Booking alat outdoor semudah booking hotel."
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+  verification: googleVerification ? { google: googleVerification } : undefined
 };
 
 export default function RootLayout({
@@ -35,17 +73,21 @@ export default function RootLayout({
     <html lang="id" className={`${headingFont.variable} ${bodyFont.variable} ${accentFont.variable}`}>
       <body className="min-h-screen bg-canvas text-ink antialiased">
         {children}
-      </body>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-EVTCLY5HCB"
-        strategy="afterInteractive"
-      />
-      <Script id="ga-init" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
+        {gaId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-EVTCLY5HCB');`}
-      </Script>
+gtag('config', '${gaId}');`}
+            </Script>
+          </>
+        ) : null}
+      </body>
     </html>
   );
 }

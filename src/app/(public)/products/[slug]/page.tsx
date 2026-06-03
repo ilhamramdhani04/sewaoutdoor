@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 import Footer from "@/components/sections/Footer";
@@ -11,6 +12,45 @@ import { formatRupiah } from "@/lib/utils";
 type ProductDetailPageProps = {
   params: { slug: string };
 };
+
+export function generateMetadata({ params }: ProductDetailPageProps): Metadata {
+  const normalizedSlug = decodeURIComponent(params.slug).toLowerCase();
+  const product = products.find((item) => item.slug.toLowerCase() === normalizedSlug);
+
+  if (!product) {
+    return {
+      title: "Produk tidak ditemukan",
+      description: "Produk yang kamu cari tidak tersedia. Cek katalog untuk pilihan lainnya.",
+      robots: {
+        index: false,
+        follow: false
+      }
+    };
+  }
+
+  const description = `Sewa ${product.name} dengan harga ${formatRupiah(product.pricePerDay)} per hari. ${product.highlights.join(", ")}.`;
+
+  return {
+    title: product.name,
+    description,
+    alternates: {
+      canonical: `/products/${product.slug}`
+    },
+    openGraph: {
+      title: product.name,
+      description,
+      url: `/products/${product.slug}`,
+      type: "article",
+      images: [{ url: product.image, alt: product.name }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description,
+      images: [product.image]
+    }
+  };
+}
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const normalizedSlug = decodeURIComponent(params.slug).toLowerCase();
