@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import Script from "next/script";
+import MobileBottomNav from "@/components/sections/MobileBottomNav";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sewaoutdoor.vercel.app";
 const siteName = "SewaOutdoor";
@@ -73,6 +74,7 @@ export default function RootLayout({
     <html lang="id" className={`${headingFont.variable} ${bodyFont.variable} ${accentFont.variable}`}>
       <body className="min-h-screen bg-canvas text-ink antialiased">
         {children}
+        <MobileBottomNav />
         {gaId ? (
           <>
             <Script

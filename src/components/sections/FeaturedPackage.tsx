@@ -7,23 +7,23 @@ import Link from "next/link";
 
 export default function FeaturedPackage() {
   return (
-    <section id="paket" className="py-20">
+    <section id="paket" className="py-14 md:py-20">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid gap-10 border border-ink bg-ink p-10 text-canvas lg:grid-cols-[1.2fr_0.8fr]"
+          className="grid gap-8 border border-ink bg-ink p-6 text-canvas sm:p-8 lg:grid-cols-[1.2fr_0.8fr] lg:p-10"
         >
           <div className="space-y-6">
             <p className="text-xs uppercase tracking-[0.4em] text-stone">
               Paket unggulan
             </p>
-            <h2 className="font-accent text-4xl uppercase leading-[0.95] md:text-5xl">
+            <h2 className="font-accent text-3xl uppercase leading-[0.95] sm:text-4xl md:text-5xl">
               Paket Camping 2D1N siap berangkat
             </h2>
-            <p className="text-stone">
+            <p className="text-sm text-stone sm:text-base">
               Semua kebutuhan camping dalam satu paket premium. Tinggal pilih tanggal, ambil,
               dan nikmati alam.
             </p>
@@ -43,7 +43,7 @@ export default function FeaturedPackage() {
               <span className="text-sm text-stone">Mulai Rp 380.000</span>
             </div>
           </div>
-          <div className="border border-hairline bg-soft-cloud overflow-hidden">
+          <div className="overflow-hidden border border-hairline bg-soft-cloud">
             <img
               src="/images/catalog/paketcamping.png"
               alt="Paket camping 2D1N"

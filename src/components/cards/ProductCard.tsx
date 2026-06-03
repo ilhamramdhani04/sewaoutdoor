@@ -26,16 +26,16 @@ export default function ProductCard({ product }: ProductCardProps) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="h-44 w-full object-cover transition duration-300 group-hover:scale-105"
+          className="h-40 w-full object-cover transition duration-300 group-hover:scale-105 sm:h-44"
         />
-        <div className="absolute left-4 top-4 flex gap-2">
+        <div className="absolute left-3 top-3 flex gap-2 sm:left-4 sm:top-4">
           <Badge>{product.category}</Badge>
           <Badge className={`border ${status.className}`}>{status.label}</Badge>
         </div>
       </div>
       <div className="flex flex-1 flex-col gap-3 pt-4">
         <div>
-          <p className="font-heading text-lg text-ink uppercase tracking-[0.06em]">
+          <p className="font-heading text-base text-ink uppercase tracking-[0.06em] sm:text-lg">
             {product.name}
           </p>
           <p className="text-xs uppercase tracking-[0.2em] text-mute">Stok {product.stock} unit</p>
@@ -50,7 +50,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="mt-auto flex items-center justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-mute">Mulai dari</p>
-            <p className="font-heading text-base text-ink">
+            <p className="font-heading text-sm text-ink sm:text-base">
               {formatRupiah(product.pricePerDay)}/hari
             </p>
           </div>

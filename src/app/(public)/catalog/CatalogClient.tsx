@@ -203,14 +203,14 @@ export default function CatalogClient() {
   return (
     <div className="min-h-screen bg-canvas">
       <Navbar />
-      <section className="border-b border-hairline pb-12 pt-16">
+      <section className="border-b border-hairline pb-10 pt-12 md:pb-12 md:pt-16">
         <Container className="space-y-6">
           <SectionHeader
             eyebrow="Katalog"
             title="Pilih gear terbaik untuk trip berikutnya"
             description="Filter kategori, cek stok, dan booking lebih cepat dengan tampilan premium."
           />
-          <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
+          <div className="grid gap-4 md:grid-cols-[1fr_auto]">
             <input
               value={query}
               onChange={(event) => {
@@ -247,9 +247,9 @@ export default function CatalogClient() {
         </Container>
       </section>
 
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <Container className="grid gap-10 lg:grid-cols-[280px_1fr]">
-          <aside className="space-y-6 border border-hairline bg-canvas p-6">
+          <aside className="space-y-6 border border-hairline bg-canvas p-5 sm:p-6">
             <div>
               <p className="font-heading text-lg text-ink uppercase tracking-[0.08em]">Filter</p>
               <p className="text-sm text-mute">Atur kategori dan preferensi.</p>

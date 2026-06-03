@@ -60,9 +60,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     return (
       <div className="min-h-screen bg-canvas">
         <Navbar />
-        <section className="py-20">
-          <Container className="space-y-6 border border-hairline bg-canvas p-8">
-            <h1 className="font-heading text-2xl text-ink uppercase tracking-[0.08em]">
+        <section className="py-16 md:py-20">
+          <Container className="space-y-6 border border-hairline bg-canvas p-6 md:p-8">
+            <h1 className="font-heading text-xl text-ink uppercase tracking-[0.08em] md:text-2xl">
               Produk tidak ditemukan
             </h1>
             <p className="text-sm text-mute">
@@ -98,7 +98,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   return (
     <div className="min-h-screen bg-canvas">
       <Navbar />
-      <section className="border-b border-hairline py-10">
+      <section className="border-b border-hairline py-8 md:py-10">
         <Container>
           <div className="flex flex-wrap items-center gap-2 text-sm text-mute">
             <Link href="/catalog" className="hover:text-ink">
@@ -110,17 +110,17 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         </Container>
       </section>
 
-      <section className="py-12">
-        <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="py-10 md:py-12">
+        <Container className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
-            <div className="border border-hairline bg-soft-cloud p-6">
+            <div className="border border-hairline bg-soft-cloud p-4 sm:p-6">
               <img
                 src={product.image}
                 alt={product.name}
                 className="aspect-[16/10] w-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
               {gallery.map((image, index) => (
                 <div
                   key={`thumb-${index}`}
@@ -135,8 +135,10 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
                 </div>
               ))}
             </div>
-            <div className="space-y-4 border border-hairline bg-canvas p-6">
-              <h3 className="font-heading text-xl text-ink uppercase tracking-[0.08em]">Spesifikasi</h3>
+            <div className="space-y-4 border border-hairline bg-canvas p-5 sm:p-6">
+              <h3 className="font-heading text-lg text-ink uppercase tracking-[0.08em] sm:text-xl">
+                Spesifikasi
+              </h3>
               <ul className="grid gap-2 text-sm text-mute">
                 {product.specs.map((spec) => (
                   <li key={spec}>{spec}</li>
@@ -146,9 +148,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
           </div>
 
           <div className="space-y-6">
-            <div className="space-y-4">
+            <div className="space-y-3">
               <Badge>{product.category}</Badge>
-              <h1 className="font-heading text-3xl text-ink uppercase tracking-[0.06em]">
+              <h1 className="font-heading text-2xl text-ink uppercase tracking-[0.06em] sm:text-3xl">
                 {product.name}
               </h1>
               <p className="text-sm text-mute">
@@ -161,10 +163,10 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               </div>
             </div>
 
-            <div className="space-y-4 border border-hairline bg-canvas p-6">
+            <div className="space-y-4 border border-hairline bg-canvas p-5 sm:p-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] text-mute">Harga sewa per hari</p>
-                <p className="font-heading text-2xl text-ink">
+                <p className="font-heading text-xl text-ink sm:text-2xl">
                   {formatRupiah(product.pricePerDay)}
                 </p>
               </div>
@@ -208,8 +210,8 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
               </Link>
             </div>
 
-            <div className="space-y-4 border border-hairline bg-canvas p-6">
-              <h3 className="font-heading text-xl text-ink uppercase tracking-[0.08em]">
+            <div className="space-y-4 border border-hairline bg-canvas p-5 sm:p-6">
+              <h3 className="font-heading text-lg text-ink uppercase tracking-[0.08em] sm:text-xl">
                 Termasuk di paket
               </h3>
               <ul className="grid gap-2 text-sm text-mute">
@@ -222,9 +224,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
         </Container>
       </section>
 
-      <section className="py-12">
+      <section className="py-10 md:py-12">
         <Container className="space-y-8">
-          <h2 className="font-heading text-2xl text-ink uppercase tracking-[0.08em]">
+          <h2 className="font-heading text-xl text-ink uppercase tracking-[0.08em] sm:text-2xl">
             Gear terkait
           </h2>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

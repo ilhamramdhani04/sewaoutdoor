@@ -7,14 +7,14 @@ import Link from "next/link";
 
 export default function QuickBooking() {
   return (
-    <section className="relative -mt-10 pb-16">
+    <section className="relative -mt-8 pb-12 md:-mt-10 md:pb-16">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="rounded-none border border-hairline bg-canvas p-6"
+          className="rounded-none border border-hairline bg-canvas p-5 sm:p-6"
         >
           <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr_auto]">
             <div>
@@ -48,7 +48,7 @@ export default function QuickBooking() {
               />
             </div>
             <div className="flex items-end">
-              <Link href="/catalog" className={getButtonClasses("primary", "w-full")}>
+              <Link href="/catalog" className={getButtonClasses("primary", "w-full")}> 
                 Cek Ketersediaan
               </Link>
             </div>

@@ -11,12 +11,12 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className="space-y-3">
-      <p className="text-xs uppercase tracking-[0.4em] text-mute">
+      <p className="text-xs uppercase tracking-[0.35em] text-mute md:tracking-[0.4em]">
         {eyebrow}
       </p>
-      <h2 className="font-heading text-3xl md:text-4xl text-ink">{title}</h2>
+      <h2 className="font-heading text-2xl text-ink sm:text-3xl md:text-4xl">{title}</h2>
       {description ? (
-        <p className="max-w-2xl text-mute">{description}</p>
+        <p className="max-w-2xl text-sm text-mute sm:text-base">{description}</p>
       ) : null}
     </div>
   );

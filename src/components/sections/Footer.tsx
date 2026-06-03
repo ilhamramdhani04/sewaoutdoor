@@ -2,10 +2,12 @@ import Container from "@/components/shared/Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-hairline py-12">
-      <Container className="grid gap-6 md:grid-cols-[1.2fr_1fr_1fr]">
+    <footer className="border-t border-hairline py-10 md:py-12">
+      <Container className="grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
         <div className="space-y-3">
-          <p className="font-heading text-xl uppercase tracking-[0.18em]">SewaOutdoor</p>
+          <p className="font-heading text-lg uppercase tracking-[0.18em] md:text-xl">
+            SewaOutdoor
+          </p>
           <p className="text-sm text-mute">
             Premium outdoor rental platform untuk petualangan yang lebih mudah.
           </p>
